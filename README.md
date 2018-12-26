@@ -4,12 +4,13 @@ Binary Clock Project
 Create a clock that operates as follows:
 
 Display:
+
  \-------
  |0 0 0|
  |0 0 0|
  |0 0 0|
  |0 0 0|
- -------
+ \-------
 
 =========
 ||0 0 0||
