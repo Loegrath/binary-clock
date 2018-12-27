@@ -1,5 +1,5 @@
 """
-Binary Clock Display Wrapper
+Binary Clock Display Wrapper.
 
 This file should just be used to contain
 the clock_display() class. The class should
@@ -11,12 +11,21 @@ from datetime import datetime
 
 
 class clock_display():
+    """
+    Binary clock display class.
+
+    This class should be used as an object to represent
+    datetime inputs according to the readme on the following
+    github repository: https://github.com/Loegrath/binary-clock
+    """
+
     def __init__(self):
-        """Initialize a clock display.
-        
+        """
+        Initialize a clock display.
+
         Each column in the array has values that correspond to
         whether or not that value is activated or not.
-        
+
         The clock is initialized to have all displays set to off.
         """
         self.time = datetime.today()
@@ -31,14 +40,17 @@ class clock_display():
         self.col_mins = np.zeros(4, dtype=int)
         self.col_min_incs = np.zeros(4, dtype=int)
 
-    def cols_update(self):
-        """Update display columns so they correctly
-        represent the current time."""
+    def cols_update(self, time):
+        """
+        Update display columns so they correctly
+        represent the current time.
+        """
+        self.time = time
 
         translate_hours = [8, 4, 2, 1]
         translate_mins = [8, 4, 2, 1]
         translate_min_incs = [60, 45, 30, 15]
-        
+
         self.cols_reset()
 
         hour = self.time.hour
@@ -71,12 +83,17 @@ class clock_display():
         # If time is in PM, use thick border.
         if self.meridiem:
             print("=========")
-            for i in range(len(self.col_hours) - 1, -1, -1):
-                print("||{0} {1} {2}||".format(self.col_hours[i], self.col_mins[i], self.col_min_incs[i]))
+            for i in range(len(self.col_hours)):
+                print("||{0} {1} {2}||".format(self.col_hours[i],
+                                               self.col_mins[i],
+                                               self.col_min_incs[i]))
             return "========="
+
         # If time is in AM, use thin border.
         else:
             print(" -------")
             for i in range(len(self.col_hours)):
-                print(" |{0} {1} {2}|".format(self.col_hours[i], self.col_mins[i], self.col_min_incs[i]))
+                print(" |{0} {1} {2}|".format(self.col_hours[i],
+                                              self.col_mins[i],
+                                              self.col_min_incs[i]))
             return " -------"
