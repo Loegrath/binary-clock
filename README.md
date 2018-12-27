@@ -1,9 +1,9 @@
 # binary-clock
 Binary Clock Project
 
-Create a clock that operates as follows:
+### Create a clock that operates as follows:
 
-Display:
+**Display:**
 ```
  -------
  |0 0 0| 
@@ -19,7 +19,7 @@ Display:
 ||0 0 0||
 =========
 ```
-Reading the Display:
+**Reading the Display:**
 ```
         ------- 
         |0 0 0| R0
@@ -42,7 +42,7 @@ Column 2 - 15 Minute Increments: 15, 30, 45, 60
 --Reading directions:
 Add the activated values in the display columns together.
 
-Examples:
+**Examples:**
 ```
  -------
  |0 1 0|
