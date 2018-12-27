@@ -1,5 +1,5 @@
 """
-Binary Clock Display Wrapper.
+Binary Clock Display.
 
 This file should just be used to contain
 the clock_display() class. The class should
